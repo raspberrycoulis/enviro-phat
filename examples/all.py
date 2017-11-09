@@ -21,7 +21,7 @@ try:
 
         output = """
 Temp: {t}c
-Pressure: {p}Pa
+Pressure: {p}hPa
 Light: {c}
 RGB: {r}, {g}, {b} 
 Heading: {h}
@@ -31,7 +31,7 @@ Analog: 0: {a0}, 1: {a1}, 2: {a2}, 3: {a3}
 
 """.format(
         t = round(weather.temperature(),2),
-        p = round(weather.pressure(),2),
+        p = round(weather.pressure()/100,2),
         c = light.light(),
         r = rgb[0],
         g = rgb[1],
